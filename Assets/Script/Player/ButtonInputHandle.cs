@@ -33,8 +33,8 @@ public class ButtonInputHandle : MonoBehaviour
         this.buttonRight.onClick.AddListener(this.MoveRight);
     }
 
-    public void MoveUp() => PlayerInputEvent.TriggerMove(new Vector2(0, 0.64f));
-    public void MoveDown() => PlayerInputEvent.TriggerMove(new Vector2(0, -0.64f));
-    public void MoveRight() => PlayerInputEvent.TriggerMove(new Vector2(0.64f, 0));
-    public void MoveLeft() => PlayerInputEvent.TriggerMove(new Vector2(-0.64f, 0));
+    public void MoveUp() => PlayerInputEvent.TriggerMove(Vector2.up);
+    public void MoveDown() => PlayerInputEvent.TriggerMove(Vector2.down);
+    public void MoveRight() => PlayerInputEvent.TriggerMove(Vector2.right);
+    public void MoveLeft() => PlayerInputEvent.TriggerMove(Vector2.left);
 }
