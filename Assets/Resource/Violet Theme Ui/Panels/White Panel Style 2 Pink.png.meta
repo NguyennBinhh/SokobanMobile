@@ -116,16 +116,20 @@ TextureImporter:
       name: White Panel Style 2 Pink_0
       rect:
         serializedVersion: 2
-        x: 105
+        x: 106
         y: 0
-        width: 1002
+        width: 1000
         height: 1115
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -500, y: -557.5}
+        - {x: -500, y: 371.5}
+        - {x: 500, y: 372.5}
+        - {x: 500, y: -557.5}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: a1baa0e142a924670800000000000000
       internalID: 8521542924851915546
@@ -136,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5f8fc1dbb83762c4ab29fc8f288ced05
     internalID: 0
     vertices: []
     indices: 

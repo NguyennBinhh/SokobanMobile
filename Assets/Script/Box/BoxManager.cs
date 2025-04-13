@@ -19,7 +19,6 @@ public class BoxManager : MonoBehaviour
             eleptime += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("hi");
         yield return new WaitForSeconds(0.2f);
         transform.position = targetPos;
     }

@@ -47,12 +47,12 @@ TagManager:
   - name: Map
     uniqueID: 495565365
     locked: 0
-  - name: Canvas
-    uniqueID: 2946720893
-    locked: 0
   - name: Box
     uniqueID: 3214303919
     locked: 0
   - name: Player
     uniqueID: 2921431735
+    locked: 0
+  - name: Canvas
+    uniqueID: 2946720893
     locked: 0

@@ -10,6 +10,7 @@ public class ButtonInputHandle : MonoBehaviour
     [SerializeField] private Button buttonDown;
     [SerializeField] private Button buttonLeft;
     [SerializeField] private Button buttonRight;
+    [SerializeField] private Button buttonReMove;
 
     private void Awake()
     {
@@ -24,6 +25,9 @@ public class ButtonInputHandle : MonoBehaviour
 
         if (this.buttonRight == null)
             this.buttonRight = GameObject.Find("ButtonRight").GetComponent<Button>();
+
+        if (this.buttonReMove == null)
+            this.buttonReMove = GameObject.Find("ButtonReMove").GetComponent<Button>();
     }
     private void Start()
     {
@@ -31,10 +35,12 @@ public class ButtonInputHandle : MonoBehaviour
         this.buttonDown.onClick.AddListener(this.MoveDown);
         this.buttonLeft.onClick.AddListener(this.MoveLeft);
         this.buttonRight.onClick.AddListener(this.MoveRight);
+        this.buttonReMove.onClick.AddListener(this.ReMove);
     }
 
     public void MoveUp() => PlayerInputEvent.TriggerMove(Vector2.up);
     public void MoveDown() => PlayerInputEvent.TriggerMove(Vector2.down);
     public void MoveRight() => PlayerInputEvent.TriggerMove(Vector2.right);
     public void MoveLeft() => PlayerInputEvent.TriggerMove(Vector2.left);
+    public void ReMove() => PlayerInputEvent.PlayerReMove();
 }

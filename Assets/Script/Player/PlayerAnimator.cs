@@ -10,7 +10,6 @@ public class PlayerAnimator : MonoBehaviour
     private void Awake()
     {
         this.playerAnim = GetComponent<Animator>();
-
     }
 
     public void SetTriggerAnim(string name)
