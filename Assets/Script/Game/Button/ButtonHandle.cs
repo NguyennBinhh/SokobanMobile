@@ -1,26 +1,40 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonHandle : MonoBehaviour
 {
+    [SerializeField] protected GameObject formChossemap;
     [SerializeField] protected Button btnPlay;
-
+    [SerializeField] protected Button btnCloseChossemap;
+    public static event Action<int> OnLevelButtonClicked;
+    
     private void Awake()
     {
-        if(btnPlay == null)
-            btnPlay = GameObject.Find("Btn_Play").GetComponent<Button>();
+
     }
 
     private void Start()
     {
         this.btnPlay.onClick.AddListener(HandleBtnPlay);
+        this.btnCloseChossemap.onClick.AddListener(HandleBtnHideForm);
     }
 
     private void HandleBtnPlay()
     {
-        var data = LevelDataManager.instance.GetLevelData(2);
-        LevelDataManager.instance.UpdateLevelData(2, Vector3.zero, 0f, false, 0f);
+        this.formChossemap.SetActive(true);
+    }
+
+    public void BtnLevelClick(int level)
+    {
+        //LevelDataManager.instance.LoadData();
+        OnLevelButtonClicked?.Invoke(level);
+    } 
+    
+    public void HandleBtnHideForm()
+    {
+        this.formChossemap.SetActive(false);
     }
 }

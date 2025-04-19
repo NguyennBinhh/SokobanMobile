@@ -14,4 +14,6 @@ public class LevelData
 
     public float CamFieldOfView;
 
+    public Vector3 PosstionPlayer;
+
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -8,30 +9,31 @@ public class LevelDataManager : MonoBehaviour
     private LevelDataList dataList;
     private Dictionary<int, LevelData> levelDataDict;
     public static LevelDataManager instance;
+   
 
     private void Awake()
     {
-        filePath = Application.persistentDataPath + "/LevelData.json";
-        levelDataDict = new Dictionary<int, LevelData>();
-        dataList = new LevelDataList();
+        this.filePath = Application.persistentDataPath + "/LevelData.json";
+        this.levelDataDict = new Dictionary<int, LevelData>();
+        this.dataList = new LevelDataList();
         instance = this;
-
         LoadData();
     }
 
-    private void LoadData()
+    public void LoadData()
     {
-        if (File.Exists(filePath))
+        if (File.Exists(this.filePath))
         {
-            string content = File.ReadAllText(filePath);
-            dataList = JsonUtility.FromJson<LevelDataList>(content);
-            if (dataList == null || dataList.levels == null)
-                dataList = new LevelDataList();
+            string content = File.ReadAllText(this.filePath);
+            this.dataList = JsonUtility.FromJson<LevelDataList>(content);
+            if (this.dataList == null || dataList.levels == null)
+                this.dataList = new LevelDataList();
         }
         else
         {
             Debug.Log("No save file found, creating new.");
-            dataList = new LevelDataList();
+            this.dataList = new LevelDataList();
+
         }
 
         ConvertToDict();
@@ -40,38 +42,39 @@ public class LevelDataManager : MonoBehaviour
     private void SaveData()
     {
         string content = JsonUtility.ToJson(dataList, true);
-        File.WriteAllText(filePath, content);
+        File.WriteAllText(this.filePath, content);
     }
 
     private void ConvertToDict()
     {
-        levelDataDict.Clear();
+        this.levelDataDict.Clear();
         foreach (var level in dataList.levels)
         {
-            levelDataDict[level.LevelNumber] = level;
+            this.levelDataDict[level.LevelNumber] = level;
         }
     }
 
     public LevelData GetLevelData(int levelNumber)
     {
-        if (levelDataDict.TryGetValue(levelNumber, out var data))
+        if (this.levelDataDict.TryGetValue(levelNumber, out var data))
             return data;
 
         // Nếu chưa có thì tạo mới
         LevelData newData = new LevelData { LevelNumber = levelNumber };
-        dataList.levels.Add(newData);
-        levelDataDict[levelNumber] = newData;
+        this.dataList.levels.Add(newData);
+        this.levelDataDict[levelNumber] = newData;
+        SaveData();
         return newData;
     }
 
-    public void UpdateLevelData(int levelNumber, Vector3 posstionLevel, float timePlay, bool isComplete, float camFieldOfView)
+    public void UpdateLevelData(int levelNumber, Vector3 posstionLevel, float timePlay, bool isComplete, float camFieldOfView, Vector3 posstionPlayer)
     {
         LevelData data = GetLevelData(levelNumber);
         data.PosstionLevel = posstionLevel;
         data.TimePlay = timePlay;
         data.IsComplete = isComplete;
         data.CamFieldOfView = camFieldOfView;
-
+        data.PosstionPlayer = posstionPlayer;
         SaveData();
     }
 }
