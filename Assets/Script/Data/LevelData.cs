@@ -16,4 +16,8 @@ public class LevelData
 
     public Vector3 PosstionPlayer;
 
+    public int TotalSteps;
+
+    public int TotalStepsPlay;
+
 }

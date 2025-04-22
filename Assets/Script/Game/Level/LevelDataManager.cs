@@ -67,7 +67,7 @@ public class LevelDataManager : MonoBehaviour
         return newData;
     }
 
-    public void UpdateLevelData(int levelNumber, Vector3 posstionLevel, float timePlay, bool isComplete, float camFieldOfView, Vector3 posstionPlayer)
+    public void UpdateLevelData(int levelNumber, Vector3 posstionLevel, float timePlay, bool isComplete, float camFieldOfView, Vector3 posstionPlayer, int totalSteps, int totalStepsPlay)
     {
         LevelData data = GetLevelData(levelNumber);
         data.PosstionLevel = posstionLevel;
@@ -75,6 +75,8 @@ public class LevelDataManager : MonoBehaviour
         data.IsComplete = isComplete;
         data.CamFieldOfView = camFieldOfView;
         data.PosstionPlayer = posstionPlayer;
+        data.TotalSteps = totalSteps;
+        data.TotalStepsPlay = totalStepsPlay;
         SaveData();
     }
 }

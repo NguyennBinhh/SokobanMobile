@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class BoxManager : MonoBehaviour
 
     private Vector2 targetPos;
     private Vector2 origPos;
-
+    public static Action OnBoxMoved;
     public IEnumerator IEnumMoveBox(Vector2 direction)
     {
         float eleptime = 0;
@@ -21,5 +22,6 @@ public class BoxManager : MonoBehaviour
         }
         yield return new WaitForSeconds(0.2f);
         transform.position = targetPos;
+        OnBoxMoved?.Invoke();
     }
 }

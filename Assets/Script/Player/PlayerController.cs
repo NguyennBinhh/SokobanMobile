@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -16,7 +17,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Tilemap tileMapWall;
     [SerializeField] private LayerMask boxLayer;    
     [SerializeField] private PlayerAnimator _playerAnimator;
-
 
     private void Awake()
     {
@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour
         PlayerInputEvent.OnReMoveInput += ReMove;
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void OnDisable()
     {  
         PlayerInputEvent.OnMoveInput -= Move;
@@ -49,7 +54,8 @@ public class PlayerController : MonoBehaviour
 
     private void ReMove()
     {
-        if(GameManager.Instance.gameStates.Count <= 0) return;
+        if (this.isMoving) return;
+        if (GameManager.Instance.gameStates.Count <= 0) return;
         GameStateData gameState = GameManager.Instance.gameStates.Pop();
         StartCoroutine(IEnumReMovePlayer(gameState.playerPos - (Vector2)transform.position));
         for (int i = 0; i < GameManager.Instance.allBoxes.Count; i++)
@@ -57,8 +63,10 @@ public class PlayerController : MonoBehaviour
             BoxManager box = GameManager.Instance.allBoxes[i];
             StartCoroutine(box.IEnumMoveBox(gameState.boxPositions[i] - (Vector2)box.transform.position));
         }
+        GameManager.Instance.steps++;
+        HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
     }
-
+  
     private IEnumerator IEnumMovePlayer(Vector2 direction)
     {
         this.isMoving = true;
@@ -144,11 +152,15 @@ public class PlayerController : MonoBehaviour
                 GameManager.Instance.SaveGameState();
                 StartCoroutine(_boxManager.IEnumMoveBox(direction));
                 StartCoroutine(IEnumMovePlayer(direction));
+                GameManager.Instance.steps--;
+                HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
                 return;
             }    
         }
         GameManager.Instance.SaveGameState();
         StartCoroutine(IEnumMovePlayer(direction));
+        GameManager.Instance.steps--;
+        HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
 
     }  
     private bool IsWall(Vector3Int vector3Int) => this.tileMapWall.HasTile(vector3Int);

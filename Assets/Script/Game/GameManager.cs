@@ -1,30 +1,50 @@
-
+﻿
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] protected LoadLevel _loadLevel;
     [SerializeField] protected PlayerController _playerController;
+    [SerializeField] protected TimerTool _timerTool;
+    
+
     public List<BoxManager> allBoxes;
     public List<GameObject> allCheckpoints;
     public Stack<GameStateData> gameStates = new Stack<GameStateData>();
 
+    private float timer;
+    public int steps;
+
     public static GameManager Instance;
 
-    private void OnEnable()
-    {
-       // ButtonHandle.OnLevelButtonClicked += OnCreateListBox;
-    }
     private void Awake()
     {
         Instance = this;
         this._loadLevel = GetComponent<LoadLevel>();
+        this._timerTool = GetComponent<TimerTool>();
+        this.timer = 0;
+    }
+
+    private void OnEnable()
+    {
+        WinChecker.LevelSuccess += OnLevelSuccess;
+    }
+
+    private void Update()
+    {
+        if(this._loadLevel.IsLoadLVComplete)
+        {
+            this.timer = this._timerTool.Timer();
+            HeaderUI.Instance.UpdateUiTime(this.timer);
+        }
     }
 
     private void OnDisable()
     {
-       // ButtonHandle.OnLevelButtonClicked -= OnCreateListBox;
+        WinChecker.LevelSuccess -= OnLevelSuccess;
     }
 
     public void SaveGameState()
@@ -39,5 +59,10 @@ public class GameManager : MonoBehaviour
 
         this.gameStates.Push(new GameStateData(this._playerController.transform.position, boxPositions));
     }
+
+    private void OnLevelSuccess()
+    {
+        Debug.Log("Ok");
+    }    
 
 }

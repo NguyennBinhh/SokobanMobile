@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Linq;
+using TMPro;
 
 public class LoadLevel : MonoBehaviour
 {
@@ -12,6 +13,13 @@ public class LoadLevel : MonoBehaviour
 
     [SerializeField] public List<BoxManager> Boxs;
     [SerializeField] public List<GameObject> Checkpoints;
+
+    public bool IsLoadLVComplete;
+
+    private void Awake()
+    {
+        this.IsLoadLVComplete = false;
+    }
 
     private void OnEnable()
     {
@@ -23,6 +31,7 @@ public class LoadLevel : MonoBehaviour
     }
     private void OnLoadLevel(int level)
     {
+        this.IsLoadLVComplete = false;
         LevelData levelData = LevelDataManager.instance.GetLevelData(level);
         if(levelData != null)
         {
@@ -36,6 +45,9 @@ public class LoadLevel : MonoBehaviour
             GameManager.Instance.allBoxes = this.Boxs;
             GameManager.Instance.allCheckpoints.Clear();
             GameManager.Instance.allCheckpoints = this.Checkpoints;
+            GameManager.Instance.steps = levelData.TotalSteps;
+            HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
+            this.IsLoadLVComplete = true;
         }
         
     } 
