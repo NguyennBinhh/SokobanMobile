@@ -3,8 +3,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] protected SoundDatabaseSO _soundDatabaseSO;
-    [SerializeField] protected AudioSource mussic;
-    [SerializeField] protected AudioSource sFX;
+    [SerializeField] public AudioSource music;
+    [SerializeField] public AudioSource sFX;
 
     public static AudioManager Instance;
 
@@ -18,9 +18,9 @@ public class AudioManager : MonoBehaviour
     {
         var soundData = this._soundDatabaseSO.GetSound(name);
         if (soundData == null) return;
-        this.mussic.clip = soundData.clip;
-        this.mussic.loop = soundData.loop;
-        this.mussic.Play();
+        this.music.clip = soundData.clip;
+        this.music.loop = soundData.loop;
+        this.music.Play();
     }
 
     public void PlaySFX(string name)
@@ -32,6 +32,6 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic()
     {
-        this.mussic.Stop();
+        this.music.Stop();
     }
 }

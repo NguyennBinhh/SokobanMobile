@@ -3726,7 +3726,7 @@ GameObject:
   - component: {fileID: 528813524}
   - component: {fileID: 528813525}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3804,7 +3804,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744386542}
+        m_TargetAssemblyTypeName: AudioOnTrigger, Assembly-CSharp
+        m_MethodName: OnchangedSliderSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &569856671
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,7 +4515,7 @@ RectTransform:
   m_Father: {fileID: 225929423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4653,7 +4665,7 @@ RectTransform:
   m_Father: {fileID: 1613463485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 21.390015, y: -0.000011444092}
   m_SizeDelta: {x: 62.8, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5516,13 +5528,14 @@ GameObject:
   - component: {fileID: 744386539}
   - component: {fileID: 744386541}
   - component: {fileID: 744386540}
+  - component: {fileID: 744386542}
   m_Layer: 5
   m_Name: FormPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744386539
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5587,6 +5600,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744386538}
   m_CullTransparentMesh: 1
+--- !u!114 &744386542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744386538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc2607e7745bc488f2e8e7dace3b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sldMusic: {fileID: 1637757982}
+  sldSFX: {fileID: 528813525}
+  toggleMusic: {fileID: 1124224496}
+  toggleSFX: {fileID: 966712419}
 --- !u!1 &760215310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6775,7 +6804,7 @@ GameObject:
   - component: {fileID: 966712418}
   - component: {fileID: 966712419}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: ToggleSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6847,7 +6876,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744386542}
+        m_TargetAssemblyTypeName: AudioOnTrigger, Assembly-CSharp
+        m_MethodName: OnChangedToggleSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1003042999
 GameObject:
@@ -7376,7 +7417,7 @@ RectTransform:
   m_Father: {fileID: 719581000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 21.390015, y: -0.000011444092}
   m_SizeDelta: {x: 62.8, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7581,7 +7622,7 @@ GameObject:
   - component: {fileID: 1124224495}
   - component: {fileID: 1124224496}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: ToggleMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7653,7 +7694,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744386542}
+        m_TargetAssemblyTypeName: AudioOnTrigger, Assembly-CSharp
+        m_MethodName: OnChangedToggleMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1160821424
 GameObject:
@@ -7997,7 +8050,7 @@ RectTransform:
   m_Father: {fileID: 171444974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8815,6 +8868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402402971}
   - component: {fileID: 1402402972}
+  - component: {fileID: 1402402973}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -8852,8 +8906,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundDatabaseSO: {fileID: 11400000, guid: ecf1e985a73b63642bfe9246f41076c3, type: 2}
-  mussic: {fileID: 626210887}
+  music: {fileID: 626210887}
   sFX: {fileID: 805046895}
+--- !u!114 &1402402973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402402970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e114f643dac08144bf17fbfa10caa65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1420976154
 GameObject:
   m_ObjectHideFlags: 0
@@ -9809,7 +9875,7 @@ GameObject:
   - component: {fileID: 1637757981}
   - component: {fileID: 1637757982}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SliderMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9887,7 +9953,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744386542}
+        m_TargetAssemblyTypeName: AudioOnTrigger, Assembly-CSharp
+        m_MethodName: OnchangedSliderMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1655347405
 GameObject:
   m_ObjectHideFlags: 0
