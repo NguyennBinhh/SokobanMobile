@@ -62,7 +62,12 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelSuccess()
     {
-        Debug.Log("Ok");
+        int levelCurruent = PlayerPrefs.GetInt("LevelCurrent");
+        LevelData levelData = LevelDataManager.instance.GetLevelData(levelCurruent);
+        if(levelData == null) return;
+        if(levelData.TimePlay > this.timer)
+            LevelDataManager.instance.UpdateLevelData(levelCurruent, levelData.PosstionLevel, this.timer, true, levelData.CamFieldOfView, levelData.PosstionPlayer, levelData.TotalSteps, this.steps);
+        Debug.Log("Đã cập nhật level");
     }    
 
 }

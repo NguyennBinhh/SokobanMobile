@@ -32,6 +32,7 @@ public class LoadLevel : MonoBehaviour
     private void OnLoadLevel(int level)
     {
         this.IsLoadLVComplete = false;
+
         LevelData levelData = LevelDataManager.instance.GetLevelData(level);
         if(levelData != null)
         {
@@ -48,6 +49,7 @@ public class LoadLevel : MonoBehaviour
             GameManager.Instance.steps = levelData.TotalSteps;
             HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
             this.IsLoadLVComplete = true;
+            PlayerPrefs.SetInt("LevelCurrent", level);
         }
         
     } 
