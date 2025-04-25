@@ -47,6 +47,7 @@ public class LoadLevel : MonoBehaviour
             GameManager.Instance.allCheckpoints.Clear();
             GameManager.Instance.allCheckpoints = this.Checkpoints;
             GameManager.Instance.steps = levelData.TotalSteps;
+            GameManager.Instance.SavePossitonBoxStart(levelData.TotalSteps, levelData.PosstionPlayer);
             HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
             this.IsLoadLVComplete = true;
             PlayerPrefs.SetInt("LevelCurrent", level);

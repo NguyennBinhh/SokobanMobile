@@ -1,0 +1,40 @@
+{
+    "levels": [
+        {
+            "LevelNumber": 1,
+            "PosstionLevel": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 4.138559341430664,
+            "IsComplete": true,
+            "CamFieldOfView": 80.0,
+            "PosstionPlayer": {
+                "x": 2.5,
+                "y": -0.5,
+                "z": 0.0
+            },
+            "TotalSteps": 10,
+            "TotalStepsPlay": 5
+        },
+        {
+            "LevelNumber": 2,
+            "PosstionLevel": {
+                "x": 101.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 85.0,
+            "PosstionPlayer": {
+                "x": 99.5,
+                "y": 1.5,
+                "z": 0.0
+            },
+            "TotalSteps": 20,
+            "TotalStepsPlay": 0
+        }
+    ]
+}

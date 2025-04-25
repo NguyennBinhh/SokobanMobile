@@ -52,6 +52,7 @@ public class ButtonHandle : MonoBehaviour
         HeaderUI.Instance.SetActiveFormLevelUp(false);
         Time.timeScale = 1;
         OnLevelButtonClicked?.Invoke(PlayerPrefs.GetInt("LevelCurrent"));
+        GameManager.Instance.ResetLevel();
     }
 
     public void HandleBtnNextLevel()

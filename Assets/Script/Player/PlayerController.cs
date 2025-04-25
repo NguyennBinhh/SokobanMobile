@@ -170,4 +170,9 @@ public class PlayerController : MonoBehaviour
         Vector2 worldBoxPos = tileMapWall.GetCellCenterWorld(vector3Int);
         return Physics2D.OverlapPoint(worldBoxPos, this.boxLayer);
     }
+
+    private void RotatePlayerInFront()
+    {
+        this._playerAnimator.SetIdleDirection("Vertical", 1);
+    }
 }

@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected LoadLevel _loadLevel;
     [SerializeField] protected PlayerController _playerController;
     [SerializeField] protected TimerTool _timerTool;
-    
+
+    [SerializeField] private List<Transform> ListBoxStart;
+    [SerializeField] private int StepsInitial;
+    [SerializeField] private Vector3 PlayerPossionInitial;
 
     public List<BoxManager> allBoxes;
     public List<GameObject> allCheckpoints;
@@ -78,12 +81,24 @@ public class GameManager : MonoBehaviour
         Debug.Log("Đã cập nhật level");
     }   
 
-    public void ResetLevel(int level)
+    public void ResetLevel()
     {
-        if(this.gameStates.Count > 0)
-        {
+        this._playerController.transform.position = this.PlayerPossionInitial;
+        this.timer = 0;
+        this.steps = this.StepsInitial;
+        HeaderUI.Instance.UpdateUiStep(this.steps);
+    }
 
+    public void SavePossitonBoxStart(int steps, Vector3 PlayerPossion)
+    {
+        if (GameManager.Instance.allBoxes == null) return;
+        foreach (BoxManager possion in GameManager.Instance.allBoxes)
+        {
+            this.ListBoxStart.Add(possion.transform);
         }
+        this.StepsInitial = steps;
+        this.PlayerPossionInitial = PlayerPossion;
+
     }
 
 }
