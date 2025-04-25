@@ -62,12 +62,28 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelSuccess()
     {
+        HeaderUI.Instance.SetActiveFormLevelUp(true);
+        Time.timeScale = 0;
         int levelCurruent = PlayerPrefs.GetInt("LevelCurrent");
         LevelData levelData = LevelDataManager.instance.GetLevelData(levelCurruent);
         if(levelData == null) return;
-        if(levelData.TimePlay > this.timer)
+        if (levelData.TimePlay > this.timer)
+        {
+            HeaderUI.Instance.IsHighScore(true);
             LevelDataManager.instance.UpdateLevelData(levelCurruent, levelData.PosstionLevel, this.timer, true, levelData.CamFieldOfView, levelData.PosstionPlayer, levelData.TotalSteps, this.steps);
+        } 
+        else
+            HeaderUI.Instance.IsHighScore(false);
+        HeaderUI.Instance.UpdateUiLevelUp(levelCurruent, this.timer, this.steps);
         Debug.Log("Đã cập nhật level");
-    }    
+    }   
+
+    public void ResetLevel(int level)
+    {
+        if(this.gameStates.Count > 0)
+        {
+
+        }
+    }
 
 }
