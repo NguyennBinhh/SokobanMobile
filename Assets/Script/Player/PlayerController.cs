@@ -171,8 +171,8 @@ public class PlayerController : MonoBehaviour
         return Physics2D.OverlapPoint(worldBoxPos, this.boxLayer);
     }
 
-    private void RotatePlayerInFront()
+    public void RotatePlayerInFront()
     {
-        this._playerAnimator.SetIdleDirection("Vertical", 1);
+        this._playerAnimator.SetIdleDirection("Vertical", -1);
     }
 }

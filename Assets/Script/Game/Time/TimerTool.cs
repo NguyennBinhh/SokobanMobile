@@ -4,7 +4,7 @@ using UnityEngine;
 public class TimerTool : MonoBehaviour
 {
     //public float remainingTime;
-    protected float elapsedTime = 0;
+    public float elapsedTime = 0;
     public float Timer()
     {
         elapsedTime += Time.deltaTime;

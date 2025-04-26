@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] protected LoadLevel _loadLevel;
     [SerializeField] protected PlayerController _playerController;
     [SerializeField] protected TimerTool _timerTool;
-
-    [SerializeField] private List<Transform> ListBoxStart;
+    
     [SerializeField] private int StepsInitial;
     [SerializeField] private Vector3 PlayerPossionInitial;
 
@@ -19,8 +18,8 @@ public class GameManager : MonoBehaviour
     public Stack<GameStateData> gameStates = new Stack<GameStateData>();
 
     private float timer;
+    [SerializeField] private List<Vector3> ListBoxStart;
     public int steps;
-
     public static GameManager Instance;
 
     private void Awake()
@@ -68,9 +67,10 @@ public class GameManager : MonoBehaviour
         HeaderUI.Instance.SetActiveFormLevelUp(true);
         Time.timeScale = 0;
         int levelCurruent = PlayerPrefs.GetInt("LevelCurrent");
+        Debug.Log(levelCurruent);
         LevelData levelData = LevelDataManager.instance.GetLevelData(levelCurruent);
         if(levelData == null) return;
-        if (levelData.TimePlay > this.timer)
+        if (levelData.TimePlay == 0 || levelData.TimePlay > this.timer)
         {
             HeaderUI.Instance.IsHighScore(true);
             LevelDataManager.instance.UpdateLevelData(levelCurruent, levelData.PosstionLevel, this.timer, true, levelData.CamFieldOfView, levelData.PosstionPlayer, levelData.TotalSteps, this.steps);
@@ -84,21 +84,37 @@ public class GameManager : MonoBehaviour
     public void ResetLevel()
     {
         this._playerController.transform.position = this.PlayerPossionInitial;
-        this.timer = 0;
+        this._playerController.RotatePlayerInFront();
+        this._timerTool.elapsedTime = 0;
         this.steps = this.StepsInitial;
         HeaderUI.Instance.UpdateUiStep(this.steps);
+        int i = 0;
+        foreach (BoxManager possion in this.allBoxes)
+        {
+            possion.gameObject.transform.position = this.ListBoxStart[i];
+            Debug.Log(this.ListBoxStart[i]);
+            i++;
+        }
     }
 
     public void SavePossitonBoxStart(int steps, Vector3 PlayerPossion)
     {
-        if (GameManager.Instance.allBoxes == null) return;
-        foreach (BoxManager possion in GameManager.Instance.allBoxes)
+        if (this.allBoxes == null) return;
+        foreach (BoxManager possion in this.allBoxes)
         {
-            this.ListBoxStart.Add(possion.transform);
+            this.ListBoxStart.Add(possion.transform.position);
         }
         this.StepsInitial = steps;
         this.PlayerPossionInitial = PlayerPossion;
 
+    }
+
+    public void ResetAllList()
+    {
+        this.allBoxes.Clear();
+        this.allCheckpoints.Clear();
+        this.ListBoxStart.Clear();
+        this.gameStates.Clear();
     }
 
 }

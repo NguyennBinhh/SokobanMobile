@@ -45,19 +45,22 @@ public class ButtonHandle : MonoBehaviour
         this.formHome.SetActive(true);
         HeaderUI.Instance.SetActiveFormLevelUp(false);
         Time.timeScale = 1;
+        GameManager.Instance.ResetLevel();
+        GameManager.Instance.ResetAllList();
     }
-
     public void HandleBtnRePlay()
     {
         HeaderUI.Instance.SetActiveFormLevelUp(false);
         Time.timeScale = 1;
-        OnLevelButtonClicked?.Invoke(PlayerPrefs.GetInt("LevelCurrent"));
         GameManager.Instance.ResetLevel();
     }
-
     public void HandleBtnNextLevel()
     {
-        HeaderUI.Instance.SetActiveFormLevelUp(false);
+        GameManager.Instance.ResetLevel();
+        GameManager.Instance.ResetAllList();
+        int nextLevel = PlayerPrefs.GetInt("LevelCurrent") + 1;
+        OnLevelButtonClicked?.Invoke(nextLevel);
         Time.timeScale = 1;
+        HeaderUI.Instance.SetActiveFormLevelUp(false);
     }
 }
