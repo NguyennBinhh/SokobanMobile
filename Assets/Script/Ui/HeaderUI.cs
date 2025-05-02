@@ -12,6 +12,10 @@ public class HeaderUI : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI textStepsLVup;
     [SerializeField] protected GameObject highScore;
     [SerializeField] protected GameObject formLevelUp;
+    [SerializeField] protected GameObject formGameOver;
+    [SerializeField] protected GameObject formChossemap;
+    [SerializeField] protected GameObject formHome;
+    [SerializeField] protected GameObject formPause;
 
     public static HeaderUI Instance;
 
@@ -51,4 +55,23 @@ public class HeaderUI : MonoBehaviour
         this.formLevelUp.SetActive(check);
     }
 
+    public void SetActiveFormGameOver(bool check)
+    {
+        this.formGameOver.SetActive(check);
+    }
+
+    public void SetActiveFormPause(bool check)
+    {
+        this.formPause.SetActive(check);
+    }
+    
+    public void SetActiveFormHome(bool check)
+    {
+        this.formHome.SetActive(check);
+    }
+
+    public void SetActiveFormChosseMap(bool check)
+    {
+        this.formChossemap.SetActive(check);
+    }
 }

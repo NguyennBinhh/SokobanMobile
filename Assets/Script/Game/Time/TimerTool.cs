@@ -3,8 +3,13 @@ using UnityEngine;
 
 public class TimerTool : MonoBehaviour
 {
-    //public float remainingTime;
     public float elapsedTime = 0;
+    private void Awake()
+    {
+        this.elapsedTime = 0;
+    }
+    //public float remainingTime;
+    
     public float Timer()
     {
         elapsedTime += Time.deltaTime;

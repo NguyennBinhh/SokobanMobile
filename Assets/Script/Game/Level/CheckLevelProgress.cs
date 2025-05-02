@@ -22,6 +22,8 @@ public class CheckLevelProgress : MonoBehaviour
     private void OnEnable()
     {
         LevelData levelData = LevelDataManager.instance.GetLevelData(int.Parse(gameObject.name));
+        Debug.Log(int.Parse(gameObject.name));
+        Debug.Log(levelData.IsComplete);
         if (levelData != null)
         {
             if(levelData.IsComplete)
@@ -29,6 +31,11 @@ public class CheckLevelProgress : MonoBehaviour
                 this.btnLevel.interactable = true;
                 this.gameobjLock.gameObject.SetActive(false);
             }
+            else
+            {
+                this.btnLevel.interactable = false;
+                this.gameobjLock.gameObject.SetActive(true);
+            }    
         }
     }
 }

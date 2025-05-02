@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class ButtonHandle : MonoBehaviour
 {
-    [SerializeField] protected GameObject formChossemap;
-    [SerializeField] protected GameObject formHome;
     [SerializeField] protected Button btnPlay;
+    [SerializeField] protected Button btnPauseGame;
+    [SerializeField] protected Button btnHidePauseGame;
     [SerializeField] protected Button btnCloseChossemap;
     public static event Action<int> OnLevelButtonClicked;
     
@@ -17,15 +17,25 @@ public class ButtonHandle : MonoBehaviour
 
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        this.btnPlay.onClick.AddListener(HandleBtnPlay);
-        this.btnCloseChossemap.onClick.AddListener(HandleBtnHideForm);
+        this.btnPlay.onClick.AddListener(this.HandleBtnPlay);
+        this.btnCloseChossemap.onClick.AddListener(this.HandleBtnHideForm);
+        this.btnPauseGame.onClick.AddListener(this.HandleBtnPause);
+        this.btnHidePauseGame.onClick.AddListener(this.HandleBtnPause);
+    }
+
+    private void OnDisable()
+    {
+        this.btnPlay.onClick.RemoveAllListeners();
+        this.btnCloseChossemap.onClick.RemoveAllListeners();
+        this.btnPauseGame.onClick.RemoveAllListeners();
+        this.btnHidePauseGame.onClick.RemoveAllListeners();
     }
 
     private void HandleBtnPlay()
     {
-        this.formChossemap.SetActive(true);
+        HeaderUI.Instance.SetActiveFormChosseMap(true);
     }
 
     public void BtnLevelClick(int level)
@@ -37,13 +47,15 @@ public class ButtonHandle : MonoBehaviour
     
     public void HandleBtnHideForm()
     {
-        this.formChossemap.SetActive(false);
+        HeaderUI.Instance.SetActiveFormChosseMap(false);
     }
 
     public void HandleBtnHome()
     {
-        this.formHome.SetActive(true);
+        HeaderUI.Instance.SetActiveFormHome(true);
         HeaderUI.Instance.SetActiveFormLevelUp(false);
+        HeaderUI.Instance.SetActiveFormGameOver(false);
+        HeaderUI.Instance.SetActiveFormPause(false);
         Time.timeScale = 1;
         GameManager.Instance.ResetLevel();
         GameManager.Instance.ResetAllList();
@@ -51,6 +63,8 @@ public class ButtonHandle : MonoBehaviour
     public void HandleBtnRePlay()
     {
         HeaderUI.Instance.SetActiveFormLevelUp(false);
+        HeaderUI.Instance.SetActiveFormGameOver(false);
+        HeaderUI.Instance.SetActiveFormPause(false);
         Time.timeScale = 1;
         GameManager.Instance.ResetLevel();
     }
@@ -62,5 +76,17 @@ public class ButtonHandle : MonoBehaviour
         OnLevelButtonClicked?.Invoke(nextLevel);
         Time.timeScale = 1;
         HeaderUI.Instance.SetActiveFormLevelUp(false);
+    }
+
+    public void HandleBtnPause()
+    {
+        Time.timeScale = 0;
+        HeaderUI.Instance.SetActiveFormPause(true);
+    }
+
+    public void HandleBtnRessume()
+    {
+        Time.timeScale = 1;
+        HeaderUI.Instance.SetActiveFormPause(false);
     }
 }

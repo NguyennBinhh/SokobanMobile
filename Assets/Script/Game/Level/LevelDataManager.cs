@@ -33,8 +33,7 @@ public class LevelDataManager : MonoBehaviour
         else
         {
             Debug.Log("No save file found, creating new.");
-            this.dataList = new LevelDataList();
-
+            //this.dataList = new LevelDataList();
         }
 
         ConvertToDict();

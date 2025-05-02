@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         this._loadLevel = GetComponent<LoadLevel>();
         this._timerTool = GetComponent<TimerTool>();
         this.timer = 0;
+        this.ResetAllList();
     }
 
     private void OnEnable()
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         {
             this.timer = this._timerTool.Timer();
             HeaderUI.Instance.UpdateUiTime(this.timer);
+            this.GameOver();
         }
     }
 
@@ -116,5 +118,15 @@ public class GameManager : MonoBehaviour
         this.ListBoxStart.Clear();
         this.gameStates.Clear();
     }
+
+    public void GameOver()
+    {
+        if(this.steps > 0) return; 
+        if(this.steps == 0)
+        {
+            Time.timeScale = 0;
+            HeaderUI.Instance.SetActiveFormGameOver(true);
+        }
+    }    
 
 }

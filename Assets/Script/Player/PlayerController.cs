@@ -91,10 +91,13 @@ public class PlayerController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.2f);
+        GameManager.Instance.steps--;
+        HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
         this._playerAnimator.SetIdleDirection("Horizontal", direction.x);
         this._playerAnimator.SetIdleDirection("Vertical", direction.y);
         transform.position = this.targetPos;
         this.isMoving = false;
+        
     }
 
     private IEnumerator IEnumReMovePlayer(Vector2 direction)
@@ -152,16 +155,11 @@ public class PlayerController : MonoBehaviour
                 GameManager.Instance.SaveGameState();
                 StartCoroutine(_boxManager.IEnumMoveBox(direction));
                 StartCoroutine(IEnumMovePlayer(direction));
-                GameManager.Instance.steps--;
-                HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
                 return;
             }    
         }
         GameManager.Instance.SaveGameState();
         StartCoroutine(IEnumMovePlayer(direction));
-        GameManager.Instance.steps--;
-        HeaderUI.Instance.UpdateUiStep(GameManager.Instance.steps);
-
     }  
     private bool IsWall(Vector3Int vector3Int) => this.tileMapWall.HasTile(vector3Int);
 

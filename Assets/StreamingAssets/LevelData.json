@@ -36,5 +36,23 @@
             "TotalSteps": 20,
             "TotalStepsPlay": 0
         }
+        {
+            "LevelNumber": 3,
+            "PosstionLevel": {
+                "x": 201.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": true,
+            "CamFieldOfView": 85.0,
+            "PosstionPlayer": {
+                "x": 200.5,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "TotalSteps": 20,
+            "TotalStepsPlay": 0
+        }
     ]
 }
