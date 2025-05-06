@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
         foreach (BoxManager possion in this.allBoxes)
         {
             possion.gameObject.transform.position = this.ListBoxStart[i];
-            Debug.Log(this.ListBoxStart[i]);
             i++;
         }
     }

@@ -16,6 +16,7 @@ public class HeaderUI : MonoBehaviour
     [SerializeField] protected GameObject formChossemap;
     [SerializeField] protected GameObject formHome;
     [SerializeField] protected GameObject formPause;
+    [SerializeField] protected GameObject formSetting;
 
     public static HeaderUI Instance;
 
@@ -63,6 +64,11 @@ public class HeaderUI : MonoBehaviour
     public void SetActiveFormPause(bool check)
     {
         this.formPause.SetActive(check);
+    }
+    
+    public void SetActiveFormSetting(bool check)
+    {
+        this.formSetting.SetActive(check);
     }
     
     public void SetActiveFormHome(bool check)

@@ -10,6 +10,9 @@ public class ButtonHandle : MonoBehaviour
     [SerializeField] protected Button btnPauseGame;
     [SerializeField] protected Button btnHidePauseGame;
     [SerializeField] protected Button btnCloseChossemap;
+    [SerializeField] protected Button btnSetting;
+    [SerializeField] protected Button btnHideSetting;
+
     public static event Action<int> OnLevelButtonClicked;
     
     private void Awake()
@@ -22,7 +25,9 @@ public class ButtonHandle : MonoBehaviour
         this.btnPlay.onClick.AddListener(this.HandleBtnPlay);
         this.btnCloseChossemap.onClick.AddListener(this.HandleBtnHideForm);
         this.btnPauseGame.onClick.AddListener(this.HandleBtnPause);
-        this.btnHidePauseGame.onClick.AddListener(this.HandleBtnPause);
+        this.btnHidePauseGame.onClick.AddListener(this.HandleBtnHidePause);
+        this.btnSetting.onClick.AddListener(this.HandleBtnSetting);
+        this.btnHideSetting.onClick.AddListener(this.HandleBtnHideSetting);
     }
 
     private void OnDisable()
@@ -31,6 +36,8 @@ public class ButtonHandle : MonoBehaviour
         this.btnCloseChossemap.onClick.RemoveAllListeners();
         this.btnPauseGame.onClick.RemoveAllListeners();
         this.btnHidePauseGame.onClick.RemoveAllListeners();
+        this.btnSetting.onClick.RemoveAllListeners();
+        this.btnHideSetting.onClick.RemoveAllListeners();
     }
 
     private void HandleBtnPlay()
@@ -82,6 +89,19 @@ public class ButtonHandle : MonoBehaviour
     {
         Time.timeScale = 0;
         HeaderUI.Instance.SetActiveFormPause(true);
+    }public void HandleBtnHidePause()
+    {
+        Time.timeScale = 1;
+        HeaderUI.Instance.SetActiveFormPause(false);
+    }
+    public void HandleBtnSetting()
+    {
+        HeaderUI.Instance.SetActiveFormSetting(true);
+    }
+    
+    public void HandleBtnHideSetting()
+    {
+        HeaderUI.Instance.SetActiveFormSetting(false);
     }
 
     public void HandleBtnRessume()

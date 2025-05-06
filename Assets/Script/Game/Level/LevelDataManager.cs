@@ -14,7 +14,6 @@ public class LevelDataManager : MonoBehaviour
     private void Awake()
     {
         this.filePath = Application.persistentDataPath + "/LevelData.json";
-        Debug.Log(filePath);
         this.levelDataDict = new Dictionary<int, LevelData>();
         this.dataList = new LevelDataList();
         instance = this;
