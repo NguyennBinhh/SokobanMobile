@@ -1,5 +1,7 @@
 ﻿using System.IO;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class ConvertDataGame : MonoBehaviour
 {
@@ -14,33 +16,51 @@ public class ConvertDataGame : MonoBehaviour
             string sourcePath = Path.Combine(Application.streamingAssetsPath, fileName);
 
 #if UNITY_ANDROID && !UNITY_EDITOR
-            // Đọc dạng WWW trên Android
+            // Trên Android, phải dùng UnityWebRequest
+            Debug.Log("Android build - bắt đầu copy bằng coroutine");
             StartCoroutine(CopyFromStreamingAssets_Android(sourcePath, targetPath));
 #else
-            // PC, Editor, iOS
+            // Trên PC, iOS, hoặc trong Editor, có thể dùng File.Copy trực tiếp
             if (File.Exists(sourcePath))
             {
                 File.Copy(sourcePath, targetPath);
-                Debug.Log("Copied default level data to persistent path.");
+                Debug.Log($"[PC/iOS] Copied {fileName} to: {targetPath}");
+            }
+            else
+            {
+                Debug.LogError($"[PC/iOS] Không tìm thấy file tại: {sourcePath}");
             }
 #endif
+        }
+        else
+        {
+            Debug.Log($"{fileName} đã tồn tại tại: {targetPath}");
         }
     }
 
 #if UNITY_ANDROID && !UNITY_EDITOR
     private IEnumerator CopyFromStreamingAssets_Android(string sourcePath, string targetPath)
     {
-        UnityEngine.Networking.UnityWebRequest request = UnityEngine.Networking.UnityWebRequest.Get(sourcePath);
+        string androidPath = "jar:file://" + sourcePath;
+
+        UnityWebRequest request = UnityWebRequest.Get(androidPath);
         yield return request.SendWebRequest();
 
-        if (request.result == UnityEngine.Networking.UnityWebRequest.Result.Success)
+        if (request.result == UnityWebRequest.Result.Success)
         {
-            File.WriteAllBytes(targetPath, request.downloadHandler.data);
-            Debug.Log("Copied default level data to persistent path (Android).");
+            try
+            {
+                File.WriteAllBytes(targetPath, request.downloadHandler.data);
+                Debug.Log($"[Android] Đã copy {fileName} vào: {targetPath}");
+            }
+            catch (IOException ex)
+            {
+                Debug.LogError($"[Android] Lỗi ghi file: {ex.Message}");
+            }
         }
         else
         {
-            Debug.LogError("Failed to copy default data: " + request.error);
+            Debug.LogError($"[Android] Không thể đọc {fileName} từ StreamingAssets: {request.error}");
         }
     }
 #endif

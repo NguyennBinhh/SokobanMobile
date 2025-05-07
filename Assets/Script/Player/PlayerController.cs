@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -50,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if (this.isMoving) return;
         CheckMovementAllowed(direction);
+        AudioManager.Instance.PlaySFX("ButtonClick");
     }
 
     private void ReMove()

@@ -1,6 +1,7 @@
 ﻿
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -89,6 +90,7 @@ public class GameManager : MonoBehaviour
         this._playerController.RotatePlayerInFront();
         this._timerTool.elapsedTime = 0;
         this.steps = this.StepsInitial;
+        this.UpdateAllBoxColors();
         HeaderUI.Instance.UpdateUiStep(this.steps);
         int i = 0;
         foreach (BoxManager possion in this.allBoxes)
@@ -126,6 +128,15 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             HeaderUI.Instance.SetActiveFormGameOver(true);
         }
-    }    
+    }
 
+    public void UpdateAllBoxColors()
+    {
+        if (this.allBoxes.Count <= 0) return;
+        if (this.allCheckpoints.Count <= 0) return;
+        foreach (var box in this.allBoxes)
+        {
+            box.UpdateColorIfOnCheckpoint(this.allCheckpoints.Select(go => go.transform).ToList());
+        }
+    }
 }

@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class BoxManager : MonoBehaviour
 {
-
     private Vector2 targetPos;
     private Vector2 origPos;
     public static Action OnBoxMoved;
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     public IEnumerator IEnumMoveBox(Vector2 direction)
     {
         float eleptime = 0;
@@ -23,5 +28,21 @@ public class BoxManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         transform.position = targetPos;
         OnBoxMoved?.Invoke();
+        GameManager.Instance.UpdateAllBoxColors();
+    }
+
+    public void UpdateColorIfOnCheckpoint(List<Transform> checkpoints)
+    {
+        bool isOnCheckpoint = false;
+        foreach (var checkpoint in checkpoints)
+        {
+            if (Vector2.Distance(transform.position, checkpoint.position) < 0.1f)
+            {
+                isOnCheckpoint = true;
+                break;
+            }
+        }
+
+        this.spriteRenderer.color = isOnCheckpoint ? Color.green : Color.white;
     }
 }

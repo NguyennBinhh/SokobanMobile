@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class WinChecker : MonoBehaviour
 {
+
     public static Action LevelSuccess;
+    [SerializeField] private BoxCollisionCheckpoint _boxCollisionCheckpoint;
+
     private void OnEnable()
     {
         BoxManager.OnBoxMoved += CheckWinCondition;
     }
+
     private void OnDisable()
     {
         BoxManager.OnBoxMoved -= CheckWinCondition;
@@ -35,7 +39,9 @@ public class WinChecker : MonoBehaviour
             }
 
             if (hasBox)
+            {
                 matchedCount++;
+            }
         }
         if (matchedCount == GameManager.Instance.allCheckpoints.Count)
         {
