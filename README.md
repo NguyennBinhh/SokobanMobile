@@ -52,6 +52,8 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
   <i>Sample results</i>
 </p>
 
+---
+
 ## 🕹️ Yêu Cầu & Cài Đặt (Requirements & Setup)
 1, Tải và cài đặt Unity 2022.3.58f1 LTS hoặc cao hơn
 
@@ -62,6 +64,8 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 4, Nhấn Play để chạy thử trong Editor
 
 📂 Lưu ý: File LevelData.json gốc được copy từ StreamingAssets vào Application.persistentDataPath ở lần chạy đầu tiên nếu chưa có.
+
+---
 
 ## 🛣️ Roadmap
 ✅ Cơ bản Sokoban hoạt động
@@ -80,6 +84,8 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 
 🟩 Bảng xếp hạng người dùng
 
+---
+
 ## 👥 Credits
 Font: Kenney.nl
 
@@ -87,4 +93,5 @@ Font: Kenney.nl
 
 Icon & Tileset: Kenney Tiles Pack
 
-Code, thiết kế và triển khai bởi Nguyễn Bá Bình(Shuu Game Dev).
+Code, thiết kế và triển khai bởi Nguyễn Bá Bình.
+
