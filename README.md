@@ -1,9 +1,23 @@
 # 🎮 Sokoban2D
 
-> Dự án Sokoban là một game giải đố kinh điển nơi người chơi điều khiển nhân vật để đẩy các hộp vào đúng vị trí đánh dấu (checkpoint) trên bản đồ.
-Game mang phong cách tối giản, tập trung vào chiến thuật di chuyển, tính toán nước đi và tư duy giải quyết vấn đề.
-Trò chơi được xây dựng bằng Unity với hệ thống level động, khả năng hoàn tác (undo), lưu dữ liệu level và thiết kế mã nguồn theo nguyên lý SOLID.
+> Sokoban Puzzle Game là một dự án game giải đố 2D cổ điển được phát triển bằng Unity, lấy cảm hứng từ trò chơi Sokoban huyền thoại xuất hiện từ những năm 1980.
+Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung gồm các khối tường, hộp, và các điểm đánh dấu (checkpoint). Nhiệm vụ chính là đẩy tất cả các hộp vào đúng vị trí checkpoint với số bước đi ít nhất có thể — không có cơ chế kéo, chỉ được đẩy và không thể đi xuyên tường hoặc đẩy nhiều hộp cùng lúc.<br>
 
+Game tập trung vào yếu tố logic, tính toán đường đi hiệu quả và sử dụng chiến lược để giải từng màn chơi. Mỗi cấp độ đều mang tính thử thách riêng: từ dễ nắm bắt ở cấp độ đầu đến các câu đố phức tạp đòi hỏi người chơi phải thử nghiệm, sai và hoàn tác nhiều lần trước khi tìm ra giải pháp đúng.<br>
+
+Dự án không chỉ đơn thuần là việc tái tạo lại gameplay Sokoban, mà còn tích hợp những tính năng hiện đại như:<br>
+
+- Undo nhiều bước (cả vị trí người chơi và hộp) để hỗ trợ trải nghiệm thử–sai hiệu quả.<br>
+
+- Thiết kế modular và mở rộng dễ dàng thêm nhiều màn chơi mới chỉ bằng cách cập nhật file JSON dữ liệu màn chơi.<br>
+
+- Đổi màu hộp theo trạng thái (đúng/không đúng vị trí), giúp phản hồi trực quan hơn cho người chơi.<br>
+
+- Hệ thống âm thanh tách rời bằng ScriptableObject, dễ mở rộng và kiểm soát cho từng hành động trong game.<br>
+
+- Đồng bộ hóa dữ liệu giữa lần chơi đầu tiên và sau khi build game, đảm bảo file JSON được tự động sao chép từ thư mục StreamingAssets sang persistentDataPath.<br>
+
+Với cơ sở mã nguồn được tổ chức theo nguyên lý SOLID và hướng mở rộng, dự án này là nền tảng lý tưởng để phát triển thành một trò chơi thương mại hoàn chỉnh hoặc phục vụ học tập cho các nhà phát triển đang học Unity.<br>
 ---
 
 ## 📖 Mô Tả
