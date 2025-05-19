@@ -5,7 +5,15 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 
 Game tập trung vào yếu tố logic, tính toán đường đi hiệu quả và sử dụng chiến lược để giải từng màn chơi. Mỗi cấp độ đều mang tính thử thách riêng: từ dễ nắm bắt ở cấp độ đầu đến các câu đố phức tạp đòi hỏi người chơi phải thử nghiệm, sai và hoàn tác nhiều lần trước khi tìm ra giải pháp đúng.<br>
 
-Dự án không chỉ đơn thuần là việc tái tạo lại gameplay Sokoban, mà còn tích hợp những tính năng hiện đại như:<br>
+---
+## 📖 Mô Tả
+
+- **Thể loại**: (ví dụ: 2D platformer, racing, adventure…)  
+- **Engine**: Unity (phiên bản X.Y.Z)  
+- **Mục tiêu**: Mô tả ngắn về gameplay, câu chuyện, hoặc trải nghiệm chính mà người chơi sẽ có.  
+
+---
+## 📖 Tính năng:
 
 - Undo nhiều bước (cả vị trí người chơi và hộp) để hỗ trợ trải nghiệm thử–sai hiệu quả.<br>
 
@@ -17,14 +25,8 @@ Dự án không chỉ đơn thuần là việc tái tạo lại gameplay Sokoban
 
 - Đồng bộ hóa dữ liệu giữa lần chơi đầu tiên và sau khi build game, đảm bảo file JSON được tự động sao chép từ thư mục StreamingAssets sang persistentDataPath.<br>
 
-Với cơ sở mã nguồn được tổ chức theo nguyên lý SOLID và hướng mở rộng, dự án này là nền tảng lý tưởng để phát triển thành một trò chơi thương mại hoàn chỉnh hoặc phục vụ học tập cho các nhà phát triển đang học Unity.<br>
----
+- Thiết kế mã nguồn theo nguyên tắc solid
 
-## 📖 Mô Tả
-
-- **Genre**: (ví dụ: 2D platformer, racing, adventure…)  
-- **Engine**: Unity (phiên bản X.Y.Z)  
-- **Mục tiêu**: Mô tả ngắn về gameplay, câu chuyện, hoặc trải nghiệm chính mà người chơi sẽ có.  
 
 ---
 
