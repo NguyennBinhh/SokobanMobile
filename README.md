@@ -36,38 +36,19 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 ## 📸 Demo
 
 <p align="left">
-  <img src="demo/gifdemo1.gif" width="195">
-  <img src="demo/gifdemo1.gif" width="195">
-  <img src="demo/gifdemo1.gif" width="195">
-  <img src="demo/gifdemo1.gif" width="195">
-  <img src="demo/gifdemo1.gif" width="195">
-   <img src="demo/gifdemo1.gif" width="195">
-  <img src="demo/gifdemo1.gif" width="195">
-  <img src="demo/gifdemo1.gif" width="195">
-
-  <img src="demo/video-3-1.gif" width="200">
-  <img src="demo/video-3-2.gif" width="200">
-  <img src="demo/video-3-3.gif" width="200">
-  <img src="demo/video-3-4.gif" width="200"><br/>
-  <img src="demo/video-4-1.gif" width="200">
-  <img src="demo/video-4-2.gif" width="200">
-  <img src="demo/video-4-3.gif" width="200">
-  <img src="demo/video-4-4.gif" width="200"><br/>
-  <img src="demo/video-5-1.gif" width="200">
-  <img src="demo/video-5-2.gif" width="200">
-  <img src="demo/video-5-3.gif" width="200">
-  <img src="demo/video-5-4.gif" width="200"><br/>
-  <img src="demo/video-6-1.gif" width="200">
-  <img src="demo/video-6-2.gif" width="200">
-  <img src="demo/video-6-3.gif" width="200">
-  <img src="demo/video-6-4.gif" width="200"><br/>
-  <img src="demo/video-7-1.gif" width="200">
-  <img src="demo/video-7-2.gif" width="200">
-  <img src="demo/video-7-3.gif" width="200">
-  <img src="demo/video-7-4.gif" width="200"><br/>
-  <img src="demo/video-8-1.gif" width="200">
-  <img src="demo/video-8-2.gif" width="200">
-  <img src="demo/video-8-3.gif" width="200"><br/>
+  <img src="demo/1.gif" width="195">
+  <img src="demo/2.gif" width="195">
+  <img src="demo/3.gif" width="195">
+  <img src="demo/4.gif" width="195">
+  <img src="demo/5.gif" width="195">
+   <img src="demo/6.gif" width="195">
+  <img src="demo/7.gif" width="195">
+  <img src="demo/8.gif" width="195">
+  <img src="demo/9.gif" width="195">
+  <img src="demo/10.gif" width="195">
+<img src="demo/11.gif" width="195">
+  <img src="demo/12.gif" width="195">
+  
   <i>Sample results</i>
 </p>
 
