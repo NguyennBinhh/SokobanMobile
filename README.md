@@ -8,8 +8,8 @@ Game tập trung vào yếu tố logic, tính toán đường đi hiệu quả v
 ---
 ## 📖 Mô Tả
 
-- **Thể loại**: (ví dụ: 2D platformer, racing, adventure…)  
-- **Engine**: Unity (phiên bản X.Y.Z)  
+- **Thể loại**: 2D, puzzle, Mobile
+- **Công cụ**: Unity (phiên bản 2022.3.58f1), Visual Studio 2022, Adobe Photoshop  
 - **Mục tiêu**: Mô tả ngắn về gameplay, câu chuyện, hoặc trải nghiệm chính mà người chơi sẽ có.  
 
 ---
