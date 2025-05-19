@@ -36,14 +36,14 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 ## 📸 Demo
 
 <p align="left">
-  <img src="demo/gifdemo1.gif" width="200">
-  <img src="demo/gifdemo1.gif" width="200">
-  <img src="demo/gifdemo1.gif" width="200">
-  <img src="demo/gifdemo1.gif" width="200">
-  <img src="demo/gifdemo1.gif" width="200">
-   <img src="demo/gifdemo1.gif" width="200">
-  <img src="demo/gifdemo1.gif" width="200">
-  <img src="demo/gifdemo1.gif" width="200">
+  <img src="demo/gifdemo1.gif" width="195">
+  <img src="demo/gifdemo1.gif" width="195">
+  <img src="demo/gifdemo1.gif" width="195">
+  <img src="demo/gifdemo1.gif" width="195">
+  <img src="demo/gifdemo1.gif" width="195">
+   <img src="demo/gifdemo1.gif" width="195">
+  <img src="demo/gifdemo1.gif" width="195">
+  <img src="demo/gifdemo1.gif" width="195">
 
   <img src="demo/video-3-1.gif" width="200">
   <img src="demo/video-3-2.gif" width="200">
