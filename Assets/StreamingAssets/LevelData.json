@@ -1,0 +1,382 @@
+{
+    "levels": [
+        {
+            "LevelNumber": 1,
+            "PosstionLevel": {
+                "x": 1.0,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0,
+            "IsComplete": false,
+            "CamFieldOfView": 80.0,
+            "PosstionPlayer": {
+                "x": 2.5,
+                "y": -0.5,
+                "z": 0.0
+            },
+            "TotalSteps": 10,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 2,
+            "PosstionLevel": {
+                "x": 101.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 85.0,
+            "PosstionPlayer": {
+                "x": 99.5,
+                "y": 1.5,
+                "z": 0.0
+            },
+            "TotalSteps": 40,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 3,
+            "PosstionLevel": {
+                "x": 201.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 85.0,
+            "PosstionPlayer": {
+                "x": 200.5,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "TotalSteps": 30,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 4,
+            "PosstionLevel": {
+                "x": 301.0,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": 302.5,
+                "y": 2.5,
+                "z": 0.0
+            },
+            "TotalSteps": 50,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 5,
+            "PosstionLevel": {
+                "x": 401.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": 399.5,
+                "y": 2.5,
+                "z": 0.0
+            },
+            "TotalSteps": 50,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 6,
+            "PosstionLevel": {
+                "x": 501.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": 500.5,
+                "y": 2.5,
+                "z": 0.0
+            },
+            "TotalSteps": 50,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 7,
+            "PosstionLevel": {
+                "x": 601.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 82.0,
+            "PosstionPlayer": {
+                "x": 599.5,
+                "y": 2.5,
+                "z": 0.0
+            },
+            "TotalSteps": 50,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 8,
+            "PosstionLevel": {
+                "x": 701.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 82.0,
+            "PosstionPlayer": {
+                "x": 699.5,
+                "y": -1.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 9,
+            "PosstionLevel": {
+                "x": 802.0,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": 800.5,
+                "y": 3.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 10,
+            "PosstionLevel": {
+                "x": 901.5,
+                "y": 0.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 92.0,
+            "PosstionPlayer": {
+                "x": 900.5,
+                "y": -0.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 11,
+            "PosstionLevel": {
+                "x": 1.0,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": -1.5,
+                "y": -97.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 12,
+            "PosstionLevel": {
+                "x": 101.0,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": 99.5,
+                "y": -98.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 13,
+            "PosstionLevel": {
+                "x": 201.5,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 100.0,
+            "PosstionPlayer": {
+                "x": 201.5,
+                "y": -98.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 14,
+            "PosstionLevel": {
+                "x": 300.5,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 82.0,
+            "PosstionPlayer": {
+                "x": 299.5,
+                "y": -100.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 15,
+            "PosstionLevel": {
+                "x": 400.0,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 80.0,
+            "PosstionPlayer": {
+                "x": 400.5,
+                "y": -95.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 16,
+            "PosstionLevel": {
+                "x": 500.0,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 88.0,
+            "PosstionPlayer": {
+                "x": 501.5,
+                "y": -98.5,
+                "z": 0.0
+            },
+            "TotalSteps": 150,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 17,
+            "PosstionLevel": {
+                "x": 600.5,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 80.0,
+            "PosstionPlayer": {
+                "x": 602.5,
+                "y": -97.5,
+                "z": 0.0
+            },
+            "TotalSteps": 50,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 18,
+            "PosstionLevel": {
+                "x": 700.0,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 90.0,
+            "PosstionPlayer": {
+                "x": 697.5,
+                "y": -100.5,
+                "z": 0.0
+            },
+            "TotalSteps": 100,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 19,
+            "PosstionLevel": {
+                "x": 799.5,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 95.0,
+            "PosstionPlayer": {
+                "x": 796.5,
+                "y": -99.5,
+                "z": 0.0
+            },
+            "TotalSteps": 150,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 20,
+            "PosstionLevel": {
+                "x": 900.5,
+                "y": -100.0,
+                "z": -10.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 85.0,
+            "PosstionPlayer": {
+                "x": 902.5,
+                "y": -101.5,
+                "z": 0.0
+            },
+            "TotalSteps": 150,
+            "TotalStepsPlay": 0
+        },
+        {
+            "LevelNumber": 0,
+            "PosstionLevel": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "TimePlay": 0.0,
+            "IsComplete": false,
+            "CamFieldOfView": 0.0,
+            "PosstionPlayer": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "TotalSteps": 0,
+            "TotalStepsPlay": 0
+        }
+    ]
+}
