@@ -1,6 +1,8 @@
 # 🎮 Sokoban2D
 
-> Một câu mô tả ngắn gọn (1–2 dòng) giải thích ý tưởng chủ đạo hoặc điểm nổi bật của game.
+> Dự án Sokoban là một game giải đố kinh điển nơi người chơi điều khiển nhân vật để đẩy các hộp vào đúng vị trí đánh dấu (checkpoint) trên bản đồ.
+Game mang phong cách tối giản, tập trung vào chiến thuật di chuyển, tính toán nước đi và tư duy giải quyết vấn đề.
+Trò chơi được xây dựng bằng Unity với hệ thống level động, khả năng hoàn tác (undo), lưu dữ liệu level và thiết kế mã nguồn theo nguyên lý SOLID.
 
 ---
 
