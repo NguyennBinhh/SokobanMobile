@@ -62,3 +62,29 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 4, Nhấn Play để chạy thử trong Editor
 
 📂 Lưu ý: File LevelData.json gốc được copy từ StreamingAssets vào Application.persistentDataPath ở lần chạy đầu tiên nếu chưa có.
+
+## 🛣️ Roadmap
+✅ Cơ bản Sokoban hoạt động
+
+✅ Undo đa bước
+
+✅ Hệ thống lưu dữ liệu level của người chơi
+
+✅ Menu chọn level
+
+✅ Hệ thống âm thanh
+
+🟩 Gợi ý đường đi
+
+🟩 Hiệu ứng chuyển cảnh
+
+🟩 Bảng xếp hạng người dùng
+
+## 👥 Credits
+Font: Kenney.nl
+
+Âm thanh: FreeSound.org
+
+Icon & Tileset: Kenney Tiles Pack
+
+Code, thiết kế và triển khai bởi Nguyễn Bá Bình(Shuu Game Dev).
