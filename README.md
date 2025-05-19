@@ -1,6 +1,6 @@
 # 🎮 Sokoban2D
 
-> Sokoban Puzzle Game là một dự án game giải đố 2D cổ điển được phát triển bằng Unity, lấy cảm hứng từ trò chơi Sokoban huyền thoại xuất hiện từ những năm 1980.
+Sokoban Puzzle Game là một dự án game giải đố 2D cổ điển được phát triển bằng Unity, lấy cảm hứng từ trò chơi Sokoban huyền thoại xuất hiện từ những năm 1980.
 Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung gồm các khối tường, hộp, và các điểm đánh dấu (checkpoint). Nhiệm vụ chính là đẩy tất cả các hộp vào đúng vị trí checkpoint với số bước đi ít nhất có thể — không có cơ chế kéo, chỉ được đẩy và không thể đi xuyên tường hoặc đẩy nhiều hộp cùng lúc.<br>
 
 Game tập trung vào yếu tố logic, tính toán đường đi hiệu quả và sử dụng chiến lược để giải từng màn chơi. Mỗi cấp độ đều mang tính thử thách riêng: từ dễ nắm bắt ở cấp độ đầu đến các câu đố phức tạp đòi hỏi người chơi phải thử nghiệm, sai và hoàn tác nhiều lần trước khi tìm ra giải pháp đúng.<br>
