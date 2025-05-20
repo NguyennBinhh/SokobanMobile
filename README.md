@@ -49,7 +49,7 @@ Trong game, người chơi vào vai một nhân vật di chuyển trong mê cung
 <img src="demo/11.gif" width="195">
   <img src="demo/12.gif" width="195">
   
-  <i>Sample results</i>
+   <i>📂 Link video demo chi tiết và apk: https://drive.google.com/drive/folders/1sJpS1rZpyfvLuv96JazxKZVQTzvIttCp?usp=drive_link </i>
 </p>
 
 ---
